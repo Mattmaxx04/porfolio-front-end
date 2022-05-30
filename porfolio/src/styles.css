@@ -1,1 +1,326 @@
-/* You can add global styles to this file, and also import other style files */
+/* seudo clase*/
+:root {
+  --primary-color: hsl(214, 84%, 56%);
+  --text-color: hsl(0, 0%, 31%);
+  --bg-color: hsl(0, 0%, 90%);
+  --bg-card-color: hsl(0, 0%, 98%);
+  --transition: color 0.1s, background-color 0.2s, ease-in-out;
+  --border-radius: .8em;
+}
+/* global */
+/* indica el tamaño correcto del box*/
+* {
+  box-sizing: border-box!important;
+}
+/* receteo margenes */
+body {
+  margin: 0;
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
+  transition: var(--transition)!important;
+}
+
+img{
+  max-width: 100%;
+}
+/*estilos del body en modo dark */
+/*cambiamos los colores de las variables del root*/
+body.dark {
+  --text-color: hsl(0, 0%, 83%);
+  --bg-color: hsl(0, 0%, 15%);
+  --bg-card-color: hsl(0, 0%, 20%);
+}
+/*estilos de a */
+a {
+  color: var(--text-color) !important;
+  text-decoration: none !important;
+}
+
+.col-lg-12{
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+
+}
+
+.imgcont{
+  display: grid;
+justify-content: center;
+}
+img{
+  border-radius: 1em;
+
+}
+a:hover {
+  color: var(--primary-color) !important;
+}
+/*estilos del header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 3em;
+  padding: 0 1.5em;
+  background-color: var(--bg-card-color);
+  transition: var(--transition);
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.logobase {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none !important;
+  }
+
+.logo__text {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+
+}
+
+.switches {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.collapse{
+   z-index: 99;
+
+
+}
+
+.toggle-theme {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /*para que aparesca la manito en el cursor*/
+  cursor: pointer;
+}
+
+.toggle-theme__icon {
+  /*separa el texto del icono */
+  margin-right: 0.5em;
+  /* tamaño del icono*/
+  width: 20px;
+}
+
+.toggle-theme__text{
+  font-size: 0.8rem;
+  padding-right: 0.3rem;
+  padding-top: 0.8rem;
+}
+
+.colors{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 20px;
+  width: 100px;
+}
+
+.colors__item{
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--text-color);
+  background-color: var(--primary-color);
+  cursor: pointer;
+}
+
+.colors__item--blue{
+  --primary-color: hsl(214, 84%, 56%);
+}
+
+.colors__item--green{
+  --primary-color: hsl(150, 84%, 56%);
+}
+
+.colors__item--purple{
+  --primary-color: hsl(276, 84%, 56%);
+}
+
+.colors__item--orange{
+  --primary-color: hsl(46, 84%, 56%);
+}
+
+.tittle{
+  text-align: center;
+  color: var(--primary-color);
+  transition: var(--transition);
+}
+/*loader*/
+.loader{
+  width: 150px;
+  height: 150px;
+  border-left: 5px solid #ff006e;
+  border-radius: 50%;
+  animation: rightrotate 900ms linear infinite;
+}
+
+ .loader::before, .loader::after{
+   content:'';
+   width: 120px;
+   display:block;
+   position: absolute;
+   top: calc(50% - 60px);
+   left: calc(50% - 60px);
+   border-right: 4px solid #3a86ff;
+   border-radius: 50%;
+   animation: leftrotate 900ms linear infinite;
+ }
+
+ .loader::after{
+   width: 90px;
+   height: 90px;
+   top:calc(50% - 45px);
+   left: calc(50% - 45px);
+   border: 0;
+   border-left: 3px solid #ffbe0b;
+   animation:none;
+ }
+
+ @keyframes leftrotate {
+   from{
+     transform: rotate(0deg);
+   }
+   to {
+     transform: rotate(720deg);
+   }
+ }
+
+ @keyframes rightrotate {
+   from { transform:rotate(360deg);}
+   to { transform:rotate(0deg);}
+ }
+
+
+/*estilos del navbar */
+.navbar {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  height: 38px !important;
+  padding: 0 1.5em !important;
+  background-color: var(--bg-card-color) !important;
+  transition: var(--transition) !important;
+
+
+}
+
+.nav-link:hover {
+  border-bottom-color: var(--primary-color);
+  border-bottom: 4px solid var(--primary-color);
+  transition: var(--transition) !important;
+}
+
+.navbar-toggler{
+ /* z-index: 2!important;*/
+  border: 1px solid  var(--primary-color)!important;
+  background-color: var(--bg-card-color) !important;
+  transition: var(--transition) !important;
+}
+
+
+.btns{
+  display: flex;
+  justify-content: end;
+}
+
+/*
+.navbar-toggler {
+  padding: .25rem .75rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  background-color: aliceblue;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  transition: box-shadow .15s ease-in-out;
+}*/
+
+/*estilos de las cards */
+.card{
+  padding: 1em!important;
+  background-color: var(--bg-card-color)!important;
+  border-radius: var(--border-radius)!important;
+  border: 2px solid var(--primary-color)!important;
+  box-shadow: 0 20px 27px 0 #a5cfe8;
+}
+
+h5{
+  border-bottom: 4px solid var(--primary-color);
+}
+
+.container{
+padding-right: var(--bs-gutter-x,5rem);
+padding-left: var(--bs-gutter-x,5rem);
+}
+
+/*image containers*/
+/*.card__image-container{
+  min-width: 320px;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.card_header{
+  padding: 1em 0;
+}
+
+.card_title {
+  margin-bottom: 1em;
+  font-size: 1.2rem;
+}
+
+.card__subtitle{
+  font-size: .9rem;
+  opacity: .8;
+}
+
+.card__link {
+  margin-bottom: .5em;
+}
+
+.card_text {
+  font-size: .9rem;
+  line-height: 1.6;
+}
+
+.card--project{
+  display:grid;
+  grid-template-columns: min-content 1fr;
+  grid-column: 1 / -1;
+}
+*/
+
+
+.btn{
+  padding: .1rem .1rem !important;
+  border: 2px solid  !important;
+  border-radius: var(--border-radius)!important;
+  color: var(--text-color)!important;
+}
+
+.btn-outline-success:hover {
+  color: var(--text-color)!important;
+  background-color:green!important;
+  border: 2px solid green!important;
+
+}
+
+.btn-success {
+  color: #fff;
+  background-color: #3f1987;
+  border-color: #198754;
+}
+/*
+.btn__login{
+background-color:green;
+}
+
+.btn-outline-success {
+  color: var(--text-color)!important;
+  border-color: var(--primary-color)!important;
+} */
+
+
