@@ -26,6 +26,7 @@ import { SoftService } from './services/soft.service';
 import { AuthenticationService } from './services/authentication.service';
 import { TokenService } from './services/token.service';
 import { interceptorProvider } from './services/interceptor.service';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 
@@ -42,7 +43,8 @@ import { interceptorProvider } from './services/interceptor.service';
     PersonComponent,
     LoginComponent,
     LoaderComponent,
-    PorfolioComponent
+    PorfolioComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

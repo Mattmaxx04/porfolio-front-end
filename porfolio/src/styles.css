@@ -149,6 +149,30 @@ a:hover {
   color: var(--primary-color);
   transition: var(--transition);
 }
+
+
+.footer{
+  background: #131313;
+}
+
+.footer__caption{
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: space-evenly;
+}
+
+
+.title__footer{
+  font-size: 24px;
+  margin-bottom: 32px;
+}
+
+.footer__copy{
+  width: 100%;
+  color: var(--black2);
+  display: flex;
+  flex-wrap: wrap;
+}
 /*loader*/
 .loader{
   width: 150px;

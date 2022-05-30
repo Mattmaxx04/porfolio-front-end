@@ -1,7 +1,7 @@
 <!------------------experiencia------------------------------>
 <div class="row">
   <div class="col-lg-12">
-    <div class="card">
+    <div class="card" id="Experiencia">
       <div class="cardtext" *ngFor="let experience of experiences">
         <button *ngIf="isAdmin" type="button" class="btn btn-outline-info border-0 mt-n2"
           (click)="onOpenModal(null!, 'add')">
