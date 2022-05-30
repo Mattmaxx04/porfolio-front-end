@@ -1,1 +1,49 @@
-<p>header works!</p>
+<header class="header">
+  <div class="logobase">
+    <a class="logobase__text">
+      <img
+        id="toggle-logobase"
+        src="assets/images/APLogowhite.png"
+        alt=""
+        width="120"
+      />
+      #YoProgramo
+    </a>
+  </div>
+
+  <!--botones-->
+<div class="btns">
+  <div class="btns_socialmedia">
+    <a class="btns__ref" href="https://github.com/Mattmaxx04" target="blanck_">
+      <img
+        id="toggle-icongh"
+        src="assets/icons/githubwhite.png"
+        alt="git hub"
+        class="toggle-theme__icon"
+      />
+    </a>
+    <a
+      class="btns__ref"
+      href="https://www.linkedin.com/in/matías-maximiliano-quiroga-8a598957/"
+      target="blanck_"
+    >
+      <img
+        id="toggle-iconlk"
+        src="assets/icons/linkedinwhite.png"
+        alt="Linkedin"
+        class="toggle-theme__icon"
+      />
+    </a>
+    <!--boton de logueo-->
+    <button *ngIf="!isLogged" type="button" class="btn btn-outline-light border-0 mt-n4" routerLink="/login">
+      <i class="fa-solid fa-right-to-bracket"></i>
+  </button>
+  <button *ngIf="isLogged" (click)="onLogOut()" type="button"
+      class="btn btn-outline-light rounded-3 my-2 my-sm-0 border-0 mt-n4">
+      <i class="fa-solid fa-right-from-bracket"></i>
+  </button>
+  <!--//boton de logueo-->
+  </div>
+</div>
+
+</header>
