@@ -3,41 +3,80 @@
   <div class="col-lg-12">
     <div class="card">
       <header class="panel-heading">
-        <button *ngIf="isAdmin" type="button" class="btn btn-outline-info border-0 mt-n2"
-            (click)="onOpenModal(null!, 'add')">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
-                <path
-                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
-            </svg>
+        <button
+          *ngIf="isAdmin"
+          type="button"
+          class="btn btn-outline-info border-0 mt-n2"
+          (click)="onOpenModal(null!, 'add')"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="bi bi-plus-circle-fill"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"
+            />
+          </svg>
         </button>
-    </header>
+      </header>
       <div class="cardtext" *ngFor="let project of projects">
         <h5 class="card-title" id="Proyectos">Proyectos</h5>
-        <h5 class="bold">{{project?.project_name}}</h5>
-          <a href="{{project?.project_url}}" target="_blanck">
-            <img src="{{project?.project_imgUrl}} " class="img-fluid"  heigh= "200em" width="200em "   alt="..." />
-         </a>
+        <p>{{ project?.project_name }}</p>
+        <a href="{{ project?.project_url }}" target="_blanck">
+          <img
+            src="{{ project?.project_imgUrl }} "
+            class="img-fluid"
+            heigh="200em"
+            width="200em "
+            alt="..."
+          />
+        </a>
         <p class="card-text">
-          {{project?.project_description}}
+          {{ project?.project_description }}
         </p>
         <div class="btns">
-          <button *ngIf="isAdmin" type="button" class="btn btn-outline-info border-0 mt-n1"
-                                      (click)="onOpenModal(project, 'edit')">
-                                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                          fill="currentColor" class="bi bi-pen-fill" viewBox="0 0 16 16">
-                                          <path
-                                              d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001z" />
-                                      </svg>
-                                  </button>
-                                  <button *ngIf="isAdmin" type="button" class="btn btn-outline-danger border-0 mt-n1"
-                                      (click)="onOpenModal(project, 'delete')">
-                                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                          fill="currentColor" class="bi bi-x-octagon-fill" viewBox="0 0 16 16">
-                                          <path
-                                              d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zm-6.106 4.5L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
-                                      </svg>
-                                  </button>
+          <button
+            *ngIf="isAdmin"
+            type="button"
+            class="btn btn-outline-info border-0 mt-n1"
+            (click)="onOpenModal(project, 'edit')"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-pen-fill"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001z"
+              />
+            </svg>
+          </button>
+          <button
+            *ngIf="isAdmin"
+            type="button"
+            class="btn btn-outline-danger border-0 mt-n1"
+            (click)="onOpenModal(project, 'delete')"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-x-octagon-fill"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zm-6.106 4.5L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z"
+              />
+            </svg>
+          </button>
         </div>
       </div>
     </div>
@@ -45,125 +84,218 @@
 </div>
 
 <!--add -->
-<div class="modal fade" id="addProjectModal" tabindex="-1" aria-labelledby="addProjectModalLabel" aria-hidden="true">
+<div
+  class="modal fade"
+  id="addProjectModal"
+  tabindex="-1"
+  aria-labelledby="addProjectModalLabel"
+  aria-hidden="true"
+>
   <div class="modal-dialog" role="document">
-      <div class="modal-content">
-          <div class="modal-header">
-              <h5 class="modal-title" id="addProjectModalLabel">Agregar proyecto</h5>
-          </div>
-          <div class="modal-body">
-              <form #addForm="ngForm" (ngSubmit)="onAddProject(addForm)">
-                  <div class="form-group">
-                      <label for="project_name">Name</label>
-                      <input type="text" ngModel name="project_name" class="form-control" id="project_name" placeholder="project_name"
-                          required>
-                  </div>
-                  <div class="form-group">
-                      <label for="project_url">url del proyecto</label>
-                      <input type="text" ngModel name="project_url" class="form-control" id="project_url"
-                          placeholder="project_url" required>
-                  </div>
-                  <div class="form-group">
-                      <label for="project_description">Acerca del proyecto</label>
-                      <input type="text" ngModel name="project_description" class="form-control" id="project_description"
-                          placeholder="project_description" required>
-                  </div>
-
-                  <div class="form-group">
-                      <label for="project_imgUrl">Imagen del proyecto</label>
-                      <input type="text" ngModel name="project_imgUrl" class="form-control" id="project_imgUrl"
-                          placeholder="project_imgUrl" required>
-                  </div>
-                  <div class="modal-footer">
-                      <button type="button" id="add-project-form" class="btn btn-outline-primary"
-                          data-bs-dismiss="modal">Cerrar</button>
-                      <button [disabled]="addForm.invalid" type="submit" class="btn btn-outline-info"
-                          data-bs-dismiss="modal">Guardar cambios</button>
-                  </div>
-              </form>
-          </div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addProjectModalLabel">Agregar proyecto</h5>
       </div>
+      <div class="modal-body">
+        <form #addForm="ngForm" (ngSubmit)="onAddProject(addForm)">
+          <div class="form-group">
+            <label for="project_name">Name</label>
+            <input
+              type="text"
+              ngModel
+              name="project_name"
+              class="form-control"
+              id="project_name"
+              placeholder="project_name"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="project_url">url del proyecto</label>
+            <input
+              type="text"
+              ngModel
+              name="project_url"
+              class="form-control"
+              id="project_url"
+              placeholder="project_url"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="project_description">Acerca del proyecto</label>
+            <input
+              type="text"
+              ngModel
+              name="project_description"
+              class="form-control"
+              id="project_description"
+              placeholder="project_description"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="project_imgUrl">Imagen del proyecto</label>
+            <input
+              type="text"
+              ngModel
+              name="project_imgUrl"
+              class="form-control"
+              id="project_imgUrl"
+              placeholder="project_imgUrl"
+              required
+            />
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              id="add-project-form"
+              class="btn btn-outline-primary"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+            <button
+              [disabled]="addForm.invalid"
+              type="submit"
+              class="btn btn-outline-info"
+              data-bs-dismiss="modal"
+            >
+              Guardar cambios
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
 </div>
 
 <!--edit -->
-<div class="modal fade" id="editProjectModal" tabindex="-1" aria-labelledby="editProjectModalLabel" aria-hidden="true">
+<div
+  class="modal fade"
+  id="editProjectModal"
+  tabindex="-1"
+  aria-labelledby="editProjectModalLabel"
+  aria-hidden="true"
+>
   <div class="modal-dialog" role="document">
-      <div class="modal-content">
-          <div class="modal-header">
-              <h5 class="modal-title" id="editProjectModalLabel">Editar {{editProject?.project_name}}</h5>
-          </div>
-          <div class="modal-body">
-              <form #editForm="ngForm">
-                  <div class="form-group">
-                      <label for="project_name">Nombre del proyecto</label>
-                      <input type="text" ngModel="{{editProject?.project_name}}" name="project_nameme" class="form-control" id="project_name"
-                          placeholder="project_name">
-                  </div>
-                  <input type="hidden" ngModel="{{editProject?.pid}}" name="pid" class="form-control" id="pid"
-                      placeholder="pid">
-                  <div class="form-group">
-                      <label for="project_url">Url del proyecto</label>
-                      <input type="text" ngModel="{{editProject?.project_url}}" name="project_url" class="form-control"
-                          id="project_url" placeholder="project_url">
-                  </div>
-                  <div class="form-group">
-                      <label for="project_description">Descripción</label>
-                      <input type="text" ngModel="{{editProject?.project_description}}" name="project_description"
-                          class="form-control" id="project_description" placeholder="project_description">
-                  </div>
-                  <div class="form-group">
-                      <label for="project_imgUrl">Imagen del proyecto</label>
-                      <input type="text" ngModel="{{editProject?.project_imgUrl}}" name="project_imgUrl" class="form-control"
-                          id="project_imgUrl" placeholder="project_imgUrl">
-                  </div>
-                  <div class="modal-footer">
-                      <button type="button" id="" data-bs-dismiss="modal"
-                          class="btn btn-outline-primary">Cerrar</button>
-                      <button (click)="onEditProject(editForm.value)" data-bs-dismiss="modal"
-                          class="btn btn-outline-info">Guardar Cambios</button>
-                  </div>
-              </form>
-          </div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editProjectModalLabel">
+          Editar {{ editProject?.project_name }}
+        </h5>
       </div>
+      <div class="modal-body">
+        <form #editForm="ngForm">
+          <div class="form-group">
+            <label for="project_name">Nombre del proyecto</label>
+            <input
+              type="text"
+              ngModel="{{ editProject?.project_name }}"
+              name="project_name"
+              class="form-control"
+              id="project_name"
+              placeholder="project_name"
+            />
+          </div>
+          <input
+            type="hidden"
+            ngModel="{{ editProject?.pid }}"
+            name="pid"
+            class="form-control"
+            id="pid"
+            placeholder="pid"
+          />
+          <div class="form-group">
+            <label for="project_url">Url del proyecto</label>
+            <input
+              type="text"
+              ngModel="{{ editProject?.project_url }}"
+              name="project_url"
+              class="form-control"
+              id="project_url"
+              placeholder="project_url"
+            />
+          </div>
+          <div class="form-group">
+            <label for="project_description">Descripción</label>
+            <input
+              type="text"
+              ngModel="{{ editProject?.project_description }}"
+              name="project_description"
+              class="form-control"
+              id="project_description"
+              placeholder="project_description"
+            />
+          </div>
+          <div class="form-group">
+            <label for="project_imgUrl">Imagen del proyecto</label>
+            <input
+              type="text"
+              ngModel="{{ editProject?.project_imgUrl }}"
+              name="project_imgUrl"
+              class="form-control"
+              id="project_imgUrl"
+              placeholder="project_imgUrl"
+            />
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              id=""
+              data-bs-dismiss="modal"
+              class="btn btn-outline-primary"
+            >
+              Cerrar
+            </button>
+            <button
+              (click)="onEditProject(editForm.value)"
+              data-bs-dismiss="modal"
+              class="btn btn-outline-info"
+            >
+              Guardar Cambios
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
 </div>
 <!-- delete -->
-<div class="modal fade" id="deleteProjectModal" tabindex="-1" aria-labelledby="deleteProjectModalLabel"
-  aria-hidden="true">
+<div
+  class="modal fade"
+  id="deleteProjectModal"
+  tabindex="-1"
+  aria-labelledby="deleteProjectModalLabel"
+  aria-hidden="true"
+>
   <div class="modal-dialog" role="document">
-      <div class="modal-content">
-          <div class="modal-header">
-              <h5 class="modal-title" id="deleteModalLabel">Eliminar {{deleteProject?.project_name}}</h5>
-          </div>
-          <div class="modal-body">
-              <p>Seguro que quiere eliminar {{deleteProject?.project_name}}?</p>
-              <div class="modal-footer">
-                  <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">No</button>
-                  <button (click)="onDeleteProject(deleteProject?.pid!)" class="btn btn-outline-danger"
-                      data-bs-dismiss="modal">Si</button>
-              </div>
-          </div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModalLabel">
+          Eliminar {{ deleteProject?.project_name }}
+        </h5>
       </div>
-  </div>
-</div>
-
-
-<!--
-<div class="row">
-  <div class="col-lg-12">
-    <div class="card">
-      <div class="cardtext" *ngFor="let project of projects">
-        <h5 class="card-title" id="Project"> {{project?.project_name}} </h5>
-        <a href="{{project?.project_url}}" target="_blanck"><img src="{{project?.project_imgUrl}} " class="img-fluid"  heigh= "200em" width="200em "   alt="..." /></a>
-         <p class="card-text">
-          Descripción: {{project?.project_description}} </p>
-          <div class="btns">
-          <a href="#" class="btn btn-primary">Edit</a>
-          <a href="#" class="btn btn-primary">Delete</a>
+      <div class="modal-body">
+        <p>Seguro que quiere eliminar {{ deleteProject?.project_name }}?</p>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-outline-info"
+            data-bs-dismiss="modal"
+          >
+            No
+          </button>
+          <button
+            (click)="onDeleteProject(deleteProject?.pid!)"
+            class="btn btn-outline-danger"
+            data-bs-dismiss="modal"
+          >
+            Si
+          </button>
         </div>
       </div>
     </div>
   </div>
-</div>-->
-
+</div>

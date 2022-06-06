@@ -1,6 +1,6 @@
 /* seudo clase*/
 :root {
-  --primary-color: hsl(214, 84%, 56%);
+  --primary-color: hsl(285, 38%, 38%);
   --text-color: hsl(0, 0%, 31%);
   --bg-color: hsl(0, 0%, 90%);
   --bg-card-color: hsl(0, 0%, 98%);
@@ -27,7 +27,7 @@ img{
 /*cambiamos los colores de las variables del root*/
 body.dark {
   --text-color: hsl(0, 0%, 83%);
-  --bg-color: hsl(0, 0%, 15%);
+  --bg-color: hsl(0, 1%, 26%);
   --bg-card-color: hsl(0, 0%, 20%);
 }
 /*estilos de a */
@@ -234,7 +234,7 @@ a:hover {
 
 .nav-link:hover {
   border-bottom-color: var(--primary-color);
-  border-bottom: 4px solid var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
   transition: var(--transition) !important;
 }
 
@@ -251,16 +251,6 @@ a:hover {
   justify-content: end;
 }
 
-/*
-.navbar-toggler {
-  padding: .25rem .75rem;
-  font-size: 1.25rem;
-  line-height: 1;
-  background-color: aliceblue;
-  border: 1px solid transparent;
-  border-radius: .25rem;
-  transition: box-shadow .15s ease-in-out;
-}*/
 
 /*estilos de las cards */
 .card{
@@ -268,54 +258,17 @@ a:hover {
   background-color: var(--bg-card-color)!important;
   border-radius: var(--border-radius)!important;
   border: 2px solid var(--primary-color)!important;
-  box-shadow: 0 20px 27px 0 #a5cfe8;
+  box-shadow: 0px 5px 10px 5px #a5cfe8;
 }
 
 h5{
-  border-bottom: 4px solid var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
 }
 
 .container{
 padding-right: var(--bs-gutter-x,5rem);
 padding-left: var(--bs-gutter-x,5rem);
 }
-
-/*image containers*/
-/*.card__image-container{
-  min-width: 320px;
-  border-radius: var(--border-radius);
-  overflow: hidden;
-}
-
-.card_header{
-  padding: 1em 0;
-}
-
-.card_title {
-  margin-bottom: 1em;
-  font-size: 1.2rem;
-}
-
-.card__subtitle{
-  font-size: .9rem;
-  opacity: .8;
-}
-
-.card__link {
-  margin-bottom: .5em;
-}
-
-.card_text {
-  font-size: .9rem;
-  line-height: 1.6;
-}
-
-.card--project{
-  display:grid;
-  grid-template-columns: min-content 1fr;
-  grid-column: 1 / -1;
-}
-*/
 
 
 .btn{
@@ -337,14 +290,5 @@ padding-left: var(--bs-gutter-x,5rem);
   background-color: #3f1987;
   border-color: #198754;
 }
-/*
-.btn__login{
-background-color:green;
-}
-
-.btn-outline-success {
-  color: var(--text-color)!important;
-  border-color: var(--primary-color)!important;
-} */
 
 

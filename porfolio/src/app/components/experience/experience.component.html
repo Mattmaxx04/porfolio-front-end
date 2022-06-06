@@ -3,37 +3,81 @@
   <div class="col-lg-12">
     <div class="card" id="Experiencia">
       <div class="cardtext" *ngFor="let experience of experiences">
-        <button *ngIf="isAdmin" type="button" class="btn btn-outline-info border-0 mt-n2"
-          (click)="onOpenModal(null!, 'add')">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-              class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
-              <path
-                  d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+        <button
+          *ngIf="isAdmin"
+          type="button"
+          class="btn btn-outline-info border-0 mt-n2"
+          (click)="onOpenModal(null!, 'add')"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="bi bi-plus-circle-fill"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"
+            />
           </svg>
-      </button>
-        <h5 class="card-title" id="Educacion"> {{experience?.company_job}} </h5>
-        <h6>Empresa: {{experience?.company_name}}  </h6>
-        <a href="{{experience?.company_url}}" target="_blanck"><img src="{{experience?.company_logoUrl}} " class="img-fluid"  heigh= "200em" width="200em "   alt="..." /></a>
-        <p class="card-text">Fecha de inicio: {{experience?.date_start}}/ Fecha de finalización: {{experience?.date_end}}</p>
+        </button>
+        <h5 class="card-title" id="Educacion">{{ experience?.company_job }}</h5>
+        <h6>Empresa: {{ experience?.company_name }}</h6>
+        <a href="{{ experience?.company_url }}" target="_blanck"
+          ><img
+            src="{{ experience?.company_logoUrl }} "
+            class="img-fluid"
+            heigh="200em"
+            width="200em "
+            alt="..."
+        /></a>
         <p class="card-text">
-          Descripción del puesto: {{experience?.experience_description}} </p>
-          <div class="btns">
-            <button *ngIf="isAdmin" type="button" class="btn btn-outline-info border-0 mt-n1"
-            (click)="onOpenModal(experience, 'edit')">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                class="bi bi-pen-fill" viewBox="0 0 16 16">
-                <path
-                    d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001z" />
+          Fecha de inicio: {{ experience?.date_start }}/ Fecha de finalización:
+          {{ experience?.date_end }}
+        </p>
+        <p class="card-text">
+          Descripción del puesto: {{ experience?.experience_description }}
+        </p>
+        <div class="btns">
+          <button
+            *ngIf="isAdmin"
+            type="button"
+            class="btn btn-outline-info border-0 mt-n1"
+            (click)="onOpenModal(experience, 'edit')"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-pen-fill"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001z"
+              />
             </svg>
-        </button>
-        <button *ngIf="isAdmin" type="button" class="btn btn-outline-danger border-0 mt-n1"
-            (click)="onOpenModal(experience, 'delete')">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                class="bi bi-x-octagon-fill" viewBox="0 0 16 16">
-                <path
-                    d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zm-6.106 4.5L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+          </button>
+          <button
+            *ngIf="isAdmin"
+            type="button"
+            class="btn btn-outline-danger border-0 mt-n1"
+            (click)="onOpenModal(experience, 'delete')"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-x-octagon-fill"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zm-6.106 4.5L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z"
+              />
             </svg>
-        </button>
+          </button>
         </div>
       </div>
     </div>
@@ -41,256 +85,292 @@
 </div>
 
 
-<!--<div class="col-lg-6" *ngFor="let experience of experiences">
-  <h3 class="mb-4">My Expericence</h3>
-  <div class="border-left border-primary pt-2 pl-4 ml-2">
-    <div class="me-4 mb-2 logo">
-      <a href="{{experience?.company_url}}" target="_blanck"><img src="{{experience?.company_logoUrl}} " class="img-fluid"  heigh= "200em" width="200em "   alt="..." /></a>
+<div
+  class="modal fade"
+  id="addExperienceModal"
+  tabindex="-1"
+  aria-labelledby="addExperienceModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addExperienceModalLabel">
+          Agregar Experiencia
+        </h5>
       </div>
-      <div class="position-relative mb-4">
-        <button *ngIf="isAdmin" type="button" class="btn btn-outline-info border-0 mt-n2"
-          (click)="onOpenModal(null!, 'add')">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-              class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
-              <path
-                  d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
-          </svg>
-      </button>
-          <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
-          <h5 class="font-weight-bold mb-1">Puesto: {{experience?.company_job}}</h5>
-          <p class="mb-2"><strong>{{experience?.company_name}}</strong> | <small>{{experience?.date_start}} - {{experience?.date_end}}</small></p>
-          <p>{{experience?.experience_description}}</p>
+      <div class="modal-body">
+        <form #addForm="ngForm" (ngSubmit)="onAddExperience(addForm)">
+          <div class="form-group">
+            <label for="company_job">Puesto</label>
+            <input
+              type="text"
+              ngModel
+              name="company_job"
+              class="form-control"
+              id="company_job"
+              placeholder="company_job"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="company_name">company name</label>
+            <input
+              type="text"
+              ngModel
+              name="company_name"
+              class="form-control"
+              id="company_name"
+              placeholder="company_name"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="company_url">company url</label>
+            <input
+              type="text"
+              ngModel
+              name="company_url"
+              class="form-control"
+              id="company_url"
+              placeholder="company_url"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="company_logoUrl">logo Url</label>
+            <input
+              type="text"
+              ngModel
+              name="yearGra"
+              class="form-control"
+              id="yearGra"
+              placeholder="company_logoUrl"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="date_start">date start</label>
+            <input
+              type="text"
+              ngModel
+              name="date_start"
+              class="form-control"
+              id="date_start"
+              placeholder="date_start"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="date_end">date end</label>
+            <input
+              type="text"
+              ngModel
+              name="date_end"
+              class="form-control"
+              id="date_end"
+              placeholder="date_end"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="experience_description">description</label>
+            <input
+              type="text"
+              ngModel
+              name="experience_description"
+              class="form-control"
+              id="experience_description"
+              placeholder="experience_description"
+              required
+            />
+          </div>
+
+          <div class="modal-footer">
+            <button
+              type="button"
+              id="add-experience-form"
+              class="btn btn-outline-primary"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+            <button
+              [disabled]="addForm.invalid"
+              type="submit"
+              class="btn btn-outline-info"
+              data-bs-dismiss="modal"
+            >
+              Guardar cambios
+            </button>
+          </div>
+        </form>
       </div>
-      <div class="col-sm-3 text-lg-end">
-        <button *ngIf="isAdmin" type="button" class="btn btn-outline-info border-0 mt-n1"
-            (click)="onOpenModal(experience, 'edit')">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                class="bi bi-pen-fill" viewBox="0 0 16 16">
-                <path
-                    d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001z" />
-            </svg>
-        </button>
-        <button *ngIf="isAdmin" type="button" class="btn btn-outline-danger border-0 mt-n1"
-            (click)="onOpenModal(experience, 'delete')">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                class="bi bi-x-octagon-fill" viewBox="0 0 16 16">
-                <path
-                    d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zm-6.106 4.5L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
-            </svg>
-        </button>
     </div>
   </div>
 </div>
-<!--old
-<div id="experience" class="raw border border-info mt-n1 rounded-3" style="background-color: white;">
-  <div class="container" id="main-container">
-      <button *ngIf="isAdmin" type="button" class="btn btn-outline-info border-0 mt-n2"
-          (click)="onOpenModal(null!, 'add')">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-              class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
-              <path
-                  d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
-          </svg>
-      </button>
-      <div *ngFor="let experience of experiences" class="card mb-3 mt-n2">
-          <div class="card-body">
-              <div class="d-flex flex-column flex-lg-row text-center">
-                  <div class="me-4 mb-2 logo">
-                    <a href="{{experience?.company_url}}" target="_blanck"><img src="{{experience?.company_logoUrl}} " class="img-fluid"  heigh= "200em" width="200em "   alt="..." /></a>
-                    </div>
-                  <div class="row flex-fill">
-                      <div class="col-sm-5">
-                          <div class="mt-n3">
-                              <h4 class="h5">{{experience?.company_name}}</h4>
-                              <p class="mb-2 text-muted">{{experience?.date_start}} -
-                                  {{experience?.date_end}}</p>
-                          </div>
-                      </div>
-                      <div class="col-sm-4 py-2">
-                          <h6 class="mb-0 fst-italic">{{experience?.experience_description}}</h6>
-                          <br />
-                          <p class="mb-2 text-muted">Puesto: {{experience?.company_job}}</p>
-                      </div>
-                      <div class="col-sm-3 text-lg-end">
-                          <button *ngIf="isAdmin" type="button" class="btn btn-outline-info border-0 mt-n1"
-                              (click)="onOpenModal(experience, 'edit')">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                                  class="bi bi-pen-fill" viewBox="0 0 16 16">
-                                  <path
-                                      d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001z" />
-                              </svg>
-                          </button>
-                          <button *ngIf="isAdmin" type="button" class="btn btn-outline-danger border-0 mt-n1"
-                              (click)="onOpenModal(experience, 'delete')">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                                  class="bi bi-x-octagon-fill" viewBox="0 0 16 16">
-                                  <path
-                                      d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zm-6.106 4.5L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
-                              </svg>
-                          </button>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-</div>-->
 
-<div class="modal fade" id="addExperienceModal" tabindex="-1" aria-labelledby="addExperienceModalLabel"
-  aria-hidden="true">
+<div
+  class="modal fade"
+  id="editExperienceModal"
+  tabindex="-1"
+  aria-labelledby="editExperienceModalLabel"
+  aria-hidden="true"
+>
   <div class="modal-dialog" role="document">
-      <div class="modal-content">
-          <div class="modal-header">
-              <h5 class="modal-title" id="addExperienceModalLabel">Agregar Experiencia</h5>
-          </div>
-          <div class="modal-body">
-              <form #addForm="ngForm" (ngSubmit)="onAddExperience(addForm)">
-                  <div class="form-group">
-                      <label for="company_job">Puesto</label>
-                      <input type="text" ngModel name="company_job" class="form-control" id="company_job"
-                          placeholder="company_job" required>
-                  </div>
-                  <div class="form-group">
-                      <label for="company_name">company name</label>
-                      <input type="text" ngModel name="company_name" class="form-control" id="company_name"
-                          placeholder="company_name" required>
-                  </div>
-                  <div class="form-group">
-                      <label for="company_url">company url</label>
-                      <input type="text" ngModel name="company_url" class="form-control" id="company_url"
-                          placeholder="company_url" required>
-                  </div>
-                  <div class="form-group">
-                      <label for="company_logoUrl">logo Url</label>
-                      <input type="text" ngModel name="yearGra" class="form-control" id="yearGra"
-                          placeholder="company_logoUrl" required>
-                  </div>
-                  <div class="form-group">
-                      <label for="date_start">date start</label>
-                      <input type="text" ngModel name="date_start" class="form-control" id="date_start"
-                          placeholder="date_start" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="date_end">date end</label>
-                    <input type="text" ngModel name="date_end" class="form-control" id="date_end"
-                        placeholder="date_end" required>
-                </div>
-
-                  <div class="form-group">
-                      <label for="experience_description">description</label>
-                      <input type="text" ngModel name="experience_description" class="form-control" id="experience_description"
-                          placeholder="experience_description" required>
-                  </div>
-
-                  <div class="modal-footer">
-                      <button type="button" id="add-experience-form" class="btn btn-outline-primary"
-                          data-bs-dismiss="modal">Cerrar</button>
-                      <button [disabled]="addForm.invalid" type="submit" class="btn btn-outline-info"
-                          data-bs-dismiss="modal">Guardar cambios</button>
-                  </div>
-              </form>
-          </div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editExperienceModalLabel">
+          Editar {{ editExperience?.company_job }}
+        </h5>
       </div>
+      <div class="modal-body">
+        <form #editForm="ngForm">
+          <div class="form-group">
+            <label for="company_job">Puesto</label>
+            <input
+              type="text"
+              ngModel="{{ editExperience?.company_job }}"
+              name="company_job"
+              class="form-control"
+              id="company_job"
+              placeholder="company_job"
+            />
+          </div>
+          <input
+            type="hidden"
+            ngModel="{{ editExperience?.xid }}"
+            name="xid"
+            class="form-control"
+            id="xid"
+            placeholder="About"
+          />
+
+          <div class="form-group">
+            <label for="experience_description">About Job</label>
+            <input
+              type="text"
+              ngModel="{{ editExperience?.experience_description }}"
+              name="experience_description"
+              class="form-control"
+              id="experience_description"
+              placeholder="experience_description"
+            />
+          </div>
+          <div class="form-group">
+            <label for="date_start">date start</label>
+            <input
+              type="text"
+              ngModel="{{ editExperience?.date_start }}"
+              name="date_start"
+              class="form-control"
+              id="date_start"
+              placeholder="date_start"
+            />
+          </div>
+          <div class="form-group">
+            <label for="date_end">date_end</label>
+            <input
+              type="text"
+              ngModel="{{ editExperience?.date_end }}"
+              name="date_end"
+              class="form-control"
+              id="date_end"
+              placeholder="date_end"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="company_name">company_name</label>
+            <input
+              type="text"
+              ngModel="{{ editExperience?.company_name }}"
+              name="company_name"
+              class="form-control"
+              id="company_name"
+              placeholder="company_name"
+            />
+          </div>
+          <div class="form-group">
+            <label for="company_logoUrl">logo Url</label>
+            <input
+              type="text"
+              ngModel="{{ editExperience?.company_logoUrl }}"
+              name="company_logoUrl"
+              class="form-control"
+              id="company_logoUrl"
+              placeholder="company_logoUrl"
+            />
+          </div>
+          <div class="form-group">
+            <label for="company_url">company url</label>
+            <input
+              type="text"
+              ngModel="{{ editExperience?.company_url }}"
+              name="company_url"
+              class="form-control"
+              id="company_url"
+              placeholder="Image URL"
+            />
+          </div>
+
+          <div class="modal-footer">
+            <button
+              type="button"
+              id=""
+              data-bs-dismiss="modal"
+              class="btn btn-outline-primary"
+            >
+              Cerrar
+            </button>
+            <button
+              (click)="onEditExperience(editForm.value)"
+              data-bs-dismiss="modal"
+              class="btn btn-outline-info"
+            >
+              Guardar cambios
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
 </div>
 
-
-<div class="modal fade" id="editExperienceModal" tabindex="-1" aria-labelledby="editExperienceModalLabel"
-  aria-hidden="true">
+<div
+  class="modal fade"
+  id="deleteExperienceModal"
+  tabindex="-1"
+  aria-labelledby="deleteExperienceModalLabel"
+  aria-hidden="true"
+>
   <div class="modal-dialog" role="document">
-      <div class="modal-content">
-          <div class="modal-header">
-              <h5 class="modal-title" id="editExperienceModalLabel">Editar {{editExperience?.company_job}}</h5>
-          </div>
-          <div class="modal-body">
-              <form #editForm="ngForm">
-                  <div class="form-group">
-                      <label for="company_job">Puesto</label>
-                      <input type="text" ngModel="{{editExperience?.company_job}}" name="company_job" class="form-control"
-                          id="company_job" placeholder="company_job">
-                  </div>
-                  <input type="hidden" ngModel="{{editExperience?.xid}}" name="xid" class="form-control" id="xid"
-                      placeholder="About">
-
-                  <div class="form-group">
-                      <label for="experience_description">About Job</label>
-                      <input type="text" ngModel="{{editExperience?.experience_description}}" name="experience_description" class="form-control"
-                          id="experience_description" placeholder="experience_description">
-                  </div>
-                  <div class="form-group">
-                      <label for="date_start">date start</label>
-                      <input type="text" ngModel="{{editExperience?.date_start}}" name="date_start" class="form-control"
-                          id="date_start" placeholder="date_start">
-                  </div>
-                  <div class="form-group">
-                      <label for="date_end">date_end</label>
-                      <input type="text" ngModel="{{editExperience?.date_end}}" name="date_end" class="form-control"
-                          id="date_end" placeholder="date_end">
-                  </div>
-
-                  <div class="form-group">
-                      <label for="company_name">company_name</label>
-                      <input type="text" ngModel="{{editExperience?.company_name}}" name="company_name" class="form-control"
-                          id="company_name" placeholder="company_name">
-                  </div>
-                  <div class="form-group">
-                      <label for="company_logoUrl">logo Url</label>
-                      <input type="text" ngModel="{{editExperience?.company_logoUrl}}" name="company_logoUrl" class="form-control"
-                          id="company_logoUrl" placeholder="company_logoUrl">
-                  </div>
-                  <div class="form-group">
-                    <label for="company_url">company url</label>
-                    <input type="text" ngModel="{{editExperience?.company_url}}" name="company_url" class="form-control"
-                        id="company_url" placeholder="Image URL">
-                </div>
-
-                  <div class="modal-footer">
-                      <button type="button" id="" data-bs-dismiss="modal"
-                          class="btn btn-outline-primary">Cerrar</button>
-                      <button (click)="onEditExperience(editForm.value)" data-bs-dismiss="modal"
-                          class="btn btn-outline-info">Guardar cambios</button>
-                  </div>
-              </form>
-          </div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModalLabel">
+          Eliminar {{ deleteExperience?.company_job }}
+        </h5>
       </div>
-  </div>
-</div>
-
-<div class="modal fade" id="deleteExperienceModal" tabindex="-1" aria-labelledby="deleteExperienceModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog" role="document">
-      <div class="modal-content">
-          <div class="modal-header">
-              <h5 class="modal-title" id="deleteModalLabel">Eliminar {{deleteExperience?.company_job}}</h5>
-          </div>
-          <div class="modal-body">
-              <p>Seguro que quiere eliminar {{deleteExperience?.company_job}}?</p>
-              <div class="modal-footer">
-                  <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">No</button>
-                  <button (click)="onDeleteExperience(deleteExperience?.xid!)" class="btn btn-outline-danger"
-                      data-bs-dismiss="modal">Si</button>
-              </div>
-          </div>
-      </div>
-  </div>
-</div>
-
-
-<!--<div class="row">
-  <div class="col-lg-12">
-    <div class="card">
-      <div class="cardtext" *ngFor="let experience of experiences">
-        <h5 class="card-title" id="Educacion"> {{experience?.company_job}} </h5>
-        <h6>Empresa: {{experience?.company_name}}  </h6>
-        <a href="{{experience?.company_url}}" target="_blanck"><img src="{{experience?.company_logoUrl}} " class="img-fluid"  heigh= "200em" width="200em "   alt="..." /></a>
-        <p class="card-text">Fecha de inicio: {{experience?.date_start}}/ Fecha de finalización: {{experience?.date_end}}</p>
-        <p class="card-text">
-          Descripción del puesto: {{experience?.experience_description}} </p>
-          <div class="btns">
-          <a href="#" class="btn btn-primary">Edit</a>
-          <a href="#" class="btn btn-primary">Delete</a>
+      <div class="modal-body">
+        <p>Seguro que quiere eliminar {{ deleteExperience?.company_job }}?</p>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-outline-info"
+            data-bs-dismiss="modal"
+          >
+            No
+          </button>
+          <button
+            (click)="onDeleteExperience(deleteExperience?.xid!)"
+            class="btn btn-outline-danger"
+            data-bs-dismiss="modal"
+          >
+            Si
+          </button>
         </div>
       </div>
     </div>
   </div>
-</div>-->
+</div>

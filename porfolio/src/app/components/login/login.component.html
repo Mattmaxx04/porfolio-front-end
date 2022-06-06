@@ -1,7 +1,7 @@
 <!--<p>login works!</p>-->
 <div class="text-center" *ngIf="isLogged; else loggedOut">
-  <div class="card rounded-3" style="background-color:#103f5a">
-      Estas Logueado
+  <div class="card rounded-3" style="background-color: #103f5a">
+    Estas Logueado
   </div>
 </div>
 
@@ -9,58 +9,41 @@
   <app-loader></app-loader>
   <div class="containerlog">
     <form #f="ngForm" (ngSubmit)="onLogin()" novalidate>
-    <div>
-    <h1>Login</h1>
-  </div>
-
-     <div>
-         <div class="input">
-          <label for="nameUser">Usuario</label>
-              <input type="text" name="nameUser" id="nameUser" [(ngModel)]="nameUser" required>
-          </div>
-    </div>
-
-
-    <div class="input">
-      <label for="password">Password</label>
-      <input type="password" name="password" id="password" [(ngModel)]="password" required>
-  </div>
-
-  <button [disabled]="!f.valid">
-      <p>Login</p>
-  </button>
-</form>
-
-<div *ngIf="f.submitted && isLoginFail" class="alert alert-danger mt-3">
-  Fail LOGIN: {{errMsj}}
-</div>
-</div>
-</ng-template>
-
-
-<!--viejo--
-  <div class="wrapper fondo">
-      <div class="logo">-->
-          <!--<img src='https://i.ibb.co/bPG25hJ/perfil-login.png' alt="">-->
-     <!-- </div>
-      <form #f="ngForm" (ngSubmit)="onLogin()" novalidate>
-
-          <div class="form-field d-flex align-items-center mt-n1">
-              <label for="nameUser">Usuario</label>
-              <input type="text" name="nameUser" id="nameUser" [(ngModel)]="nameUser" required>
-          </div>
-
-          <div class="form-field d-flex align-items-center">
-              <label for="password">Password</label>
-              <input type="password" name="password" id="password" [(ngModel)]="password" required>
-          </div>
-
-          <button class="btn btn-outline-info mt-3" [disabled]="!f.valid">
-              <h1 class="font-monospace fst-italic">LOG IN</h1>
-          </button>
-      </form>
-     <div *ngIf="f.submitted && isLoginFail" class="alert alert-danger mt-3">
-          Fail LOGIN: {{errMsj}}
+      <div>
+        <h1>Login</h1>
       </div>
+
+      <div>
+        <div class="input">
+          <label for="nameUser">Usuario</label>
+          <input
+            type="text"
+            name="nameUser"
+            id="nameUser"
+            [(ngModel)]="nameUser"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="input">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          [(ngModel)]="password"
+          required
+        />
+      </div>
+
+      <button [disabled]="!f.valid">
+        <p>Login</p>
+      </button>
+    </form>
+
+    <div *ngIf="f.submitted && isLoginFail" class="alert alert-danger mt-3">
+      Fail LOGIN: {{ errMsj }}
+    </div>
   </div>
-</ng-template>-->
+</ng-template>
