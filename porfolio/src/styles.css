@@ -1,35 +1,47 @@
-/* seudo clase*/
-:root {
-  --primary-color: hsl(285, 38%, 38%);
-  --text-color: hsl(0, 0%, 31%);
-  --bg-color: hsl(0, 0%, 90%);
-  --bg-card-color: hsl(0, 0%, 98%);
-  --transition: color 0.1s, background-color 0.2s, ease-in-out;
-  --border-radius: .8em;
-}
 /* global */
-/* indica el tamaño correcto del box*/
+:root {
+  --primary-color:#7A9F35	;
+  --text-color:#FFF0AA;
+  --text-color-secondary:#D4C26A;
+  --text-family:'Baloo 2', cursive;
+  --text-family-secondary:'Montserrat', sans-serif;
+  --bg-color: #D4EE9F ;
+  --bg-card-color:#764B8E	;
+  --transition: color 0.1s, background-color 0.2s, ease-in-out;
+  --border-radius: 1em;
+}
+
 * {
   box-sizing: border-box!important;
 }
-/* receteo margenes */
+
 body {
   margin: 0;
-  background-color: var(--bg-color) !important;
+  background: linear-gradient(to right top, #260339, #411e53, #5d3a6f, #79578c, #9775aa);
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
   color: var(--text-color) !important;
-  transition: var(--transition)!important;
+  font-family: var(--text-family);
 }
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.text-secondary{color:var(--text-color-secondary)!important;}
 
 img{
   max-width: 100%;
 }
-/*estilos del body en modo dark */
-/*cambiamos los colores de las variables del root*/
-body.dark {
-  --text-color: hsl(0, 0%, 83%);
-  --bg-color: hsl(0, 1%, 26%);
-  --bg-card-color: hsl(0, 0%, 20%);
-}
+
 /*estilos de a */
 a {
   color: var(--text-color) !important;
@@ -63,6 +75,7 @@ a:hover {
   background-color: var(--bg-card-color);
   transition: var(--transition);
   border-bottom: 2px solid var(--primary-color);
+
 }
 
 .logobase {
@@ -78,12 +91,12 @@ a:hover {
   padding: 20px;
 
 }
-
+/*
 .switches {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
+}*/
 
 .collapse{
    z-index: 99;
@@ -91,18 +104,17 @@ a:hover {
 
 }
 
+/*
 .toggle-theme {
   display: flex;
   align-items: center;
   justify-content: center;
-  /*para que aparesca la manito en el cursor*/
-  cursor: pointer;
-}
+
 
 .toggle-theme__icon {
-  /*separa el texto del icono */
+
   margin-right: 0.5em;
-  /* tamaño del icono*/
+
   width: 20px;
 }
 
@@ -127,23 +139,7 @@ a:hover {
   background-color: var(--primary-color);
   cursor: pointer;
 }
-
-.colors__item--blue{
-  --primary-color: hsl(214, 84%, 56%);
-}
-
-.colors__item--green{
-  --primary-color: hsl(150, 84%, 56%);
-}
-
-.colors__item--purple{
-  --primary-color: hsl(276, 84%, 56%);
-}
-
-.colors__item--orange{
-  --primary-color: hsl(46, 84%, 56%);
-}
-
+*/
 .tittle{
   text-align: center;
   color: var(--primary-color);
@@ -152,27 +148,15 @@ a:hover {
 
 
 .footer{
-  background: #131313;
-}
-
-.footer__caption{
+  background: var(--bg-card-color);
   display: flex;
-  flex-wrap: wrap-reverse;
-  justify-content: space-evenly;
-}
-
-
-.title__footer{
-  font-size: 24px;
-  margin-bottom: 32px;
-}
-
-.footer__copy{
+  justify-content: space-around;
   width: 100%;
-  color: var(--black2);
-  display: flex;
-  flex-wrap: wrap;
+  color: var(--text-color);
+  border-radius: var(--border-radius)!important;
+  border: 2px solid var(--primary-color)!important;
 }
+
 /*loader*/
 .loader{
   width: 150px;
@@ -228,7 +212,7 @@ a:hover {
   padding: 0 1.5em !important;
   background-color: var(--bg-card-color) !important;
   transition: var(--transition) !important;
-
+  font-family: var(--text-family-secondary);
 
 }
 
@@ -258,7 +242,7 @@ a:hover {
   background-color: var(--bg-card-color)!important;
   border-radius: var(--border-radius)!important;
   border: 2px solid var(--primary-color)!important;
-  box-shadow: 0px 5px 10px 5px #a5cfe8;
+  /*box-shadow: 0px 5px 10px 5px #a5cfe8;*/
 }
 
 h5{
@@ -272,7 +256,7 @@ padding-left: var(--bs-gutter-x,5rem);
 
 
 .btn{
-  padding: .1rem .1rem !important;
+  background-color:#9775AA ;
   border: 2px solid  !important;
   border-radius: var(--border-radius)!important;
   color: var(--text-color)!important;
@@ -280,15 +264,15 @@ padding-left: var(--bs-gutter-x,5rem);
 
 .btn-outline-success:hover {
   color: var(--text-color)!important;
-  background-color:green!important;
-  border: 2px solid green!important;
+  background-color:#9775AA!important;
+  border: 2px solid #FFF0AA!important;
 
 }
-
+/*
 .btn-success {
   color: #fff;
   background-color: #3f1987;
   border-color: #198754;
-}
+}*/
 
 

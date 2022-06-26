@@ -1,7 +1,8 @@
 <!------------------experiencia------------------------------>
 <div class="row">
   <div class="col-lg-12">
-    <div class="card" id="Experiencia">
+    <h5 class="card-title" id="Experience" >Experiencia</h5>
+    <div class="card" >
       <div class="cardtext" *ngFor="let experience of experiences">
         <button
           *ngIf="isAdmin"
@@ -22,7 +23,7 @@
             />
           </svg>
         </button>
-        <h5 class="card-title" id="Educacion">{{ experience?.company_job }}</h5>
+        <h5 class="card-title" id="Experience">{{ experience?.company_job }}</h5>
         <h6>Empresa: {{ experience?.company_name }}</h6>
         <a href="{{ experience?.company_url }}" target="_blanck"
           ><img

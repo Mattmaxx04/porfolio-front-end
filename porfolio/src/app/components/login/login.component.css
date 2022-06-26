@@ -9,7 +9,7 @@
 .containerlog {
 	width: 320px;
 	height: 480px;
-	background: #fff;
+	background: #260339;
 	box-shadow: 0 10px 15px rgba(179, 179, 179, 0.7);
 	position: absolute;
 	top: 50%;
@@ -18,8 +18,8 @@
 	border-radius: 7px;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-evenly;
-	padding: 1rem;
+	justify-content: space-around;
+	padding: 2rem;
 }
 
 .containerlog h2{
@@ -38,6 +38,10 @@
 }
 
 .input {
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 	position: relative;
 	width: 100%;
 	height: 50px;
@@ -95,11 +99,12 @@
 
 button {
 	height: 50px;
-	background: #0A66C3;
+  width:100px;
+	background: #764B8E;
 	outline: none;
 	border: none;
 	border-radius: 30px;
-	color: #fff;
+	color: #FFF0AA;
 	font-size: 1rem;
 	font-weight: bolder;
 }

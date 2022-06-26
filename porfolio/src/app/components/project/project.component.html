@@ -1,6 +1,7 @@
 <!------------------proyectos------------------------------>
 <div class="row">
   <div class="col-lg-12">
+    <h5 class="card-title" id="Proyectos">Proyectos</h5>
     <div class="card">
       <header class="panel-heading">
         <button
@@ -24,14 +25,14 @@
         </button>
       </header>
       <div class="cardtext" *ngFor="let project of projects">
-        <h5 class="card-title" id="Proyectos">Proyectos</h5>
+
         <p>{{ project?.project_name }}</p>
         <a href="{{ project?.project_url }}" target="_blanck">
           <img
             src="{{ project?.project_imgUrl }} "
             class="img-fluid"
-            heigh="200em"
-            width="200em "
+            heigh="300em"
+            width="300em "
             alt="..."
           />
         </a>
