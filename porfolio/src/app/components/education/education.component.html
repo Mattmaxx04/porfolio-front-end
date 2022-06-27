@@ -2,9 +2,9 @@
 <div class="row">
   <div class="col-lg-12">
     <h5 class="card-title" id="Educacion">Educación</h5>
+
     <div class="card" >
-      <div class="cardtext" *ngFor="let education of educations">
-        <button
+      <button
           *ngIf="isAdmin"
           type="button"
           class="btn btn-outline-info border-0 mt-n2"
@@ -23,8 +23,8 @@
             />
           </svg>
         </button>
-
-        <h5 class="font-weight-bold mb-1">{{ education?.edu_title }}</h5>
+      <div class="cardtext" *ngFor="let education of educations">
+         <h5 class="font-weight-bold mb-1">{{ education?.edu_title }}</h5>
         <img
           src="{{ education?.edu_logoUrl }}"
           class="img-fluid"

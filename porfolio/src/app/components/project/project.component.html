@@ -26,7 +26,7 @@
       </header>
       <div class="cardtext" *ngFor="let project of projects">
 
-        <p>{{ project?.project_name }}</p>
+        <h5>{{ project?.project_name }}</h5>
         <a href="{{ project?.project_url }}" target="_blanck">
           <img
             src="{{ project?.project_imgUrl }} "

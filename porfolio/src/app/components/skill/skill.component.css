@@ -1,3 +1,15 @@
+.card{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.imgskill{
+  height: 6em;
+  width :6em;
+}
+
 li{
   list-style-type: none;
 
@@ -28,4 +40,8 @@ ul{
 .habilidades{
   margin-right: 10px;
   margin-left: 10px;
+}
+
+.progress-bar{
+  background-color: #A5C663;
 }

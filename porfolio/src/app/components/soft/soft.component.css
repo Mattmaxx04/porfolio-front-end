@@ -1,0 +1,11 @@
+.card{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.imgskill{
+  height: 6em;
+  width :6em;
+}

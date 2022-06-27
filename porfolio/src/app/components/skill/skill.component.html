@@ -28,18 +28,17 @@
 
         <img
           src="{{ skill?.skill_logoUrl }} "
-          class="img-fluid"
-          heigh="60em"
-          width="60em "
+          class="imgskill"
+
           alt="..."
         />
 
-        <p class="card-text">
+        <h5>
           {{ skill?.skill_name }}
-        </p>
+        </h5>
         <div class="progress" id="barra">
           <div
-            class="progress-bar progress-bar-striped bg-info progress-bar-animated"
+            class="progress-bar progress-bar-striped progress-bar-animated"
             role="progressbar"
             [ngStyle]="{ width: skill?.skill_age + '%' }"
             aria-valuenow="50"

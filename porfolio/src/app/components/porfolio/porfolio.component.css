@@ -1,0 +1,25 @@
+/* up Button */
+.btnup{
+  position:fixed;
+  width:60px;
+  height:60px;
+  bottom:40px;
+  left:40px;
+  color:#FFF0AA;
+  border-radius:50px;
+  text-align:center;
+  font-size:60px;
+  opacity:0;
+  pointer-events: none;
+  transition: all .4s;
+}
+
+.btnup.active {
+  bottom:32px;
+  pointer-events: auto;
+  opacity:1;
+}
+
+.my-btnup{
+  margin-top:16px;
+}
