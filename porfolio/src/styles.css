@@ -214,7 +214,7 @@ a:hover {
   background-color: var(--bg-card-color) !important;
   transition: var(--transition) !important;
   font-family: var(--text-family-secondary);
-
+  border-bottom: #806D15 solid 2px
 }
 
 .nav-link:hover {
@@ -257,6 +257,7 @@ h5{
 .container{
 padding-right: var(--bs-gutter-x,5rem);
 padding-left: var(--bs-gutter-x,5rem);
+padding-top: var(--bs-gutter-x,6rem);
 }
 
 
@@ -273,11 +274,32 @@ padding-left: var(--bs-gutter-x,5rem);
   border: 2px solid #FFF0AA!important;
 
 }
-/*
-.btn-success {
-  color: #fff;
-  background-color: #3f1987;
-  border-color: #198754;
-}*/
 
+.cardsoft{
+  display: flex;
+  margin: 2px;
+  border-radius: var(--border-radius)!important;
+  border: 2px solid var(--primary-color)!important;
+  align-items: center;
+    flex-direction: column;
+    padding:1rem;
+}
+
+.cardi{
+  display: grid;
+    grid-template-columns: repeat(1,1fr);
+    align-items: end;
+padding: 1em!important;
+background-color: var(--bg-card-color)!important;
+border-radius: var(--border-radius)!important;
+border: 2px solid var(--primary-color)!important;
+}
+
+@media(min-width: 770px){
+
+  .cardi{
+    grid-template-columns: repeat(3,1fr)!important;
+
+  }
+}
 
