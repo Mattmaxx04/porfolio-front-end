@@ -1,40 +1,35 @@
-<div class="row">
+<div>
   <div class="col-lg-12">
     <h5 class="card-title" id="Soft">Soft skills</h5>
-    <div class="card">
-      <header class="panel-heading">
-        <button
-          *ngIf="isAdmin"
-          type="button"
-          class="btn btn-outline-info border-0 mt-n2"
-          (click)="onOpenModal(null!, 'add')"
+    <div>
+      <button
+        *ngIf="isAdmin"
+        type="button"
+        class="btn btn-outline-info border-0 mt-n2"
+        (click)="onOpenModal(null!, 'add')"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          fill="currentColor"
+          class="bi bi-plus-circle-fill"
+          viewBox="0 0 16 16"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            fill="currentColor"
-            class="bi bi-plus-circle-fill"
-            viewBox="0 0 16 16"
-          >
-            <path
-              d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"
-            />
-          </svg>
-        </button>
-      </header>
-      <div class="cardtext" *ngFor="let soft of softs">
-
-        <img
-          src="{{ soft?.sft_logoUrl }} "
-          class="imgskill"
-          alt="..."
-        />
+          <path
+            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"
+          />
+        </svg>
+      </button>
+    </div>
+    <div class="cardi">
+      <div class="cardsoft" *ngFor="let soft of softs">
+        <img src="{{ soft?.sft_logoUrl }} " class="imgskill" alt="..." />
 
         <h5>
           {{ soft?.sft_name }}
         </h5>
-        <div class="row text-center">
+        <div>
           <tr>
             <button
               *ngIf="isAdmin"
@@ -97,26 +92,26 @@
       <div class="modal-body">
         <form #addForm="ngForm" (ngSubmit)="onAddSoft(addForm)">
           <div class="form-group">
-            <label for="name">Name</label>
+            <label for="sft_name">Name</label>
             <input
               type="text"
               ngModel
-              name="name"
+              name="sft_name"
               class="form-control"
-              id="name"
+              id="sft_name"
               placeholder="Name"
               required
             />
           </div>
 
           <div class="form-group">
-            <label for="imageUrl">Image URL</label>
+            <label for="sft_logoUrl">Image URL</label>
             <input
               type="text"
               ngModel
-              name="imageUrl"
+              name="sft_logoUrl"
               class="form-control"
-              id="imageUrl"
+              id="sft_logoUrl"
               placeholder="Image URL"
               required
             />
@@ -124,7 +119,7 @@
           <div class="modal-footer">
             <button
               type="button"
-              id="add-skill-form"
+              id="add-soft-form"
               class="btn btn-outline-primary"
               data-bs-dismiss="modal"
             >

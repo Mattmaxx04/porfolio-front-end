@@ -46,7 +46,7 @@ export class SoftComponent implements OnInit {
   }
 
   public onAddSoft(addForm: NgForm): void {
-    document.getElementById("add-Soft-form")!.click();
+    document.getElementById("add-soft-form")!.click();
     this.softService.addSoft(addForm.value).subscribe({
       next: (response: Soft) => {
         console.log(response);

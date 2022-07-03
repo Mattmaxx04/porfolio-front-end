@@ -6,6 +6,7 @@
 }
 
 .imgskill{
-  height: 6em;
-  width :6em;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
 }
