@@ -1,8 +1,32 @@
+.mt-n2 {
+  margin-top: 0.25rem;
+  margin-right: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
 .card{
   display: flex;
   justify-content: space-around;
   flex-direction: row;
   flex-wrap: wrap;
+}
+.cardskill{
+    margin: 2px;
+  border-radius: var(--border-radius)!important;
+  border: 2px solid var(--primary-color)!important;
+  align-items: center;
+    flex-direction: column;
+    padding:1rem;
+}
+
+.cardsk{
+  display: grid;
+    grid-template-columns: repeat(1,1fr);
+    align-items: end;
+padding: 1em!important;
+background-color: var(--bg-card-color)!important;
+border-radius: var(--border-radius)!important;
+border: 2px solid var(--primary-color)!important;
 }
 
 .imgskill{
@@ -44,4 +68,15 @@ ul{
 
 .progress-bar{
   background-color: #A5C663;
+}
+
+
+
+
+@media(min-width: 770px){
+
+  .cardsk{
+    grid-template-columns: repeat(2,2fr)!important;
+
+  }
 }

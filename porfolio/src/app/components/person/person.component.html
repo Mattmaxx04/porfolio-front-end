@@ -1,5 +1,5 @@
 <!--persona-->
-<div class="row">
+<div class="row" id="Acercade">
   <div class="col-lg-12">
     <div class="card" *ngFor="let person of persons">
       <div class="imgcont">
@@ -12,7 +12,7 @@
         />
       </div>
       <div class="cardtext">
-        <h5 class="card-title" id="Acercade">Acerca de</h5>
+        <h5 class="card-title" >Acerca de</h5>
         <h2>Yo soy {{ person?.name }} {{ person?.lastname }}.</h2>
         <p class="card-text">
           {{ person?.about_me }}
