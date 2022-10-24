@@ -1,6 +1,4 @@
-# porfolio-Front-end / proyecto Argentina Programa. 
-
-# porfolio-Frpnt-end (proyecto Argentina Programa)
+# porfolio-Front-end (proyecto Argentina Programa)
 
 * * *
 
